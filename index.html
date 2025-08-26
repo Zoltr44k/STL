@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">STL logo</div>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#more">More</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Sporttauchclub Leonberg</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- First Sliding Section -->
+        <section class="content-section" id="about">
+            <h2 class="section-title">Lorem ipsum dolor.</h2>
+            <div class="slider-container">
+                <div class="slider-trigger left" onclick="slideLeft('slider1')">
+                    <button class="slider-arrow left">‹</button>
+                </div>
+                <div class="slider-trigger right" onclick="slideRight('slider1')">
+                    <button class="slider-arrow right">›</button>
+                </div>
+                <div class="slider-wrapper" id="slider1">
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Service Image 1"></div>
+                        <h3>Training</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Service Image 2"></div>
+                        <h3>Ausbildung</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Service Image 3"></div>
+                        <h3>Ausfahrten</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Service Image 4"></div>
+                        <h3>Feste</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Service Image 5"></div>
+                        <h3>Jugendgruppe</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Second Sliding Section -->
+        <section class="content-section" id="more">
+            <h2 class="section-title">more</h2>
+            <div class="slider-container">
+                <div class="slider-trigger left" onclick="slideLeft('slider2')">
+                    <button class="slider-arrow left">‹</button>
+                </div>
+                <div class="slider-trigger right" onclick="slideRight('slider2')">
+                    <button class="slider-arrow right">›</button>
+                </div>
+                <div class="slider-wrapper" id="slider2">
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Portfolio Image 1"></div>
+                        <h3>Text 1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Portfolio Image 2"></div>
+                        <h3>Text 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Portfolio Image 3"></div>
+                        <h3>Text 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Portfolio Image 4"></div>
+                        <h3>Text 4</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                    <div class="content-box">
+                        <div class="image-placeholder" data-text="Portfolio Image 5"></div>
+                        <h3>Text 5</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container" id="contact">
+            <div class="footer-box">
+                <h4>Contact Information</h4>
+                <p><strong>Address:</strong> -</p>
+                <p><strong>Phone:</strong> -</p>
+                <p><strong>Email:</strong> -</p>
+                <p><strong>Hours:</strong> -</p>
+            </div>
+            <div class="footer-box">
+                <h4>Impressum</h4>
+                <p><strong>Company:</strong> -</p>
+                <p><strong>Registration:</strong> -</p>
+                <p><strong>VAT ID:</strong> -</p>
+                <p><strong>Responsible:</strong> -</p>
+                <p><strong>Legal Notice:</strong> -</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Slider functionality
+        let currentPosition = { slider1: 0, slider2: 0 };
+        let isAnimating = { slider1: false, slider2: false };
+
+        // Initialize sliders with cloned content for seamless infinite loop
+        function initializeSlider(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const originalBoxes = Array.from(slider.children);
+            
+            // Clear existing content
+            slider.innerHTML = '';
+            
+            // Add clones at the beginning (for smooth left scrolling)
+            originalBoxes.forEach(box => {
+                const clone = box.cloneNode(true);
+                slider.appendChild(clone);
+            });
+            
+            // Add original boxes
+            originalBoxes.forEach(box => {
+                slider.appendChild(box);
+            });
+            
+            // Add clones at the end (for smooth right scrolling)
+            originalBoxes.forEach(box => {
+                const clone = box.cloneNode(true);
+                slider.appendChild(clone);
+            });
+            
+            // Start at the first original box (skip the first set of clones)
+            const boxWidth = originalBoxes[0].offsetWidth + 32;
+            currentPosition[sliderId] = originalBoxes.length * boxWidth;
+            slider.style.transform = `translateX(-${currentPosition[sliderId]}px)`;
+            slider.style.transition = 'transform 0.3s ease';
+        }
+
+        function slideLeft(sliderId) {
+            if (isAnimating[sliderId]) return;
+            
+            const slider = document.getElementById(sliderId);
+            const boxWidth = slider.children[0].offsetWidth + 32;
+            const originalBoxCount = slider.children.length / 3; // We have 3 sets of boxes
+            
+            isAnimating[sliderId] = true;
+            currentPosition[sliderId] -= boxWidth;
+            slider.style.transform = `translateX(-${currentPosition[sliderId]}px)`;
+            
+            setTimeout(() => {
+                // If we've scrolled past the first set of clones, jump to the end
+                if (currentPosition[sliderId] < boxWidth * originalBoxCount) {
+                    slider.style.transition = 'none';
+                    currentPosition[sliderId] = boxWidth * originalBoxCount * 2 - boxWidth;
+                    slider.style.transform = `translateX(-${currentPosition[sliderId]}px)`;
+                    
+                    requestAnimationFrame(() => {
+                        slider.style.transition = 'transform 0.3s ease';
+                        isAnimating[sliderId] = false;
+                    });
+                } else {
+                    isAnimating[sliderId] = false;
+                }
+            }, 300);
+        }
+
+        function slideRight(sliderId) {
+            if (isAnimating[sliderId]) return;
+            
+            const slider = document.getElementById(sliderId);
+            const boxWidth = slider.children[0].offsetWidth + 32;
+            const originalBoxCount = slider.children.length / 3; // We have 3 sets of boxes
+            
+            isAnimating[sliderId] = true;
+            currentPosition[sliderId] += boxWidth;
+            slider.style.transform = `translateX(-${currentPosition[sliderId]}px)`;
+            
+            setTimeout(() => {
+                // If we've scrolled past the second set of boxes, jump to the beginning
+                if (currentPosition[sliderId] >= boxWidth * originalBoxCount * 2) {
+                    slider.style.transition = 'none';
+                    currentPosition[sliderId] = boxWidth * originalBoxCount;
+                    slider.style.transform = `translateX(-${currentPosition[sliderId]}px)`;
+                    
+                    requestAnimationFrame(() => {
+                        slider.style.transition = 'transform 0.3s ease';
+                        isAnimating[sliderId] = false;
+                    });
+                } else {
+                    isAnimating[sliderId] = false;
+                }
+            }, 300);
+        }
+
+        function updateButtons(sliderId) {
+            // No longer needed since we have infinite scrolling
+        }
+
+        // Initialize sliders when page loads
+        window.addEventListener('load', function() {
+            initializeSlider('slider1');
+            initializeSlider('slider2');
+        });
+
+        // Update on window resize
+        window.addEventListener('resize', function() {
+            // Reinitialize sliders to recalculate positions
+            setTimeout(() => {
+                initializeSlider('slider1');
+                initializeSlider('slider2');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
