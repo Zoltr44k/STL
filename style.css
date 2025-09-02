@@ -11,7 +11,7 @@ html{
 
 body{
     background: #fff;
-    color: #333;
+    color: #000;
 }
 
 #header{
@@ -20,10 +20,10 @@ body{
     background-image: url(images/Manta\ vor\ Sonne.jpg);
     background-size: cover;
     background-position: center;
-    position: fixed; 
+    position: fixed; /* HINZUGEFÜGT: Header fixiert */
     top: 0;
     left: 0;
-    z-index: 1; 
+    z-index: 1; /* HINZUGEFÜGT: Header bleibt im Hintergrund */
 }
 
 .container{
@@ -35,8 +35,8 @@ nav{
     align-items: center; 
     justify-content: space-between;
     flex-wrap: wrap;
-    position: relative; 
-    z-index: 10; 
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 10; /* HINZUGEFÜGT: Navigation über allem */
 }
 
 .logo{
@@ -50,7 +50,7 @@ nav ul li{
 }
 
 nav ul li a{
-    color: #333;
+    color: #000;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -60,7 +60,7 @@ nav ul li a::after{
     content: '';
     width: 0%;
     height: 3px;
-    background: #222;
+    background: #000;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -82,27 +82,27 @@ nav ul li a:hover::after{
 }
 
 .header-text h1 span{
-    color: #333;
+    color: #000;
 }
 
 /* -----------angebot----------- */
 #angebot {
     padding: 60px 0;
     background-color: #f5f7fa;
-    position: relative; 
-    z-index: 2; 
-    margin-top: 100vh; 
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
+    margin-top: 100vh; /* HINZUGEFÜGT: Startet nach dem Header */
 }
 
 #angebot .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 #angebot .sub-title {
     text-align: center;
-    font-size: 2.5rem; font-weight: 700; font-weight: 700;
+    font-size: 2.8rem;
     margin-bottom: 50px;
     color: #0066a4;
 }
@@ -139,8 +139,8 @@ nav ul li a:hover::after{
 }
 
 #angebot .layer h3 {
-    font-size: 1.5rem; font-weight: 600;
-    margin-bottom: 0px;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
     color: #0066a4;
 }
 
@@ -155,27 +155,28 @@ nav ul li a:hover::after{
         grid-template-columns: 1fr;
         gap: 25px;
     }
-
+    
     #angebot .sub-title {
-        font-size: 2rem; font-weight: 700;
+        font-size: 2.2rem;
     }
-
+    
     #angebot .work {
         height: auto;
         max-width: 500px;
         margin: 0 auto;
     }
-
+    
     #angebot .layer {
         height: auto;
     }
 }
 
+/* -----------Ausbildung (FIXED SLIDER)----------- */
 #ausbildung {
     padding: 60px 0;
     background-color: #f5f7fa;
-    position: relative; 
-    z-index: 2; 
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
 }
 
 #ausbildung .container {
@@ -186,12 +187,25 @@ nav ul li a:hover::after{
 
 #ausbildung .sub-title {
     text-align: center;
-    font-size: 2.5rem; font-weight: 700;
+    font-size: 2.5rem;
     margin-bottom: 50px;
     color: #0066a4;
     position: relative;
 }
 
+#ausbildung .sub-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a8e1;
+    border-radius: 2px;
+}
+
+/* FIXED: Slider Container */
 .slider-container {
     position: relative;
     overflow: hidden; /* This is crucial - hides slides that are outside the view */
@@ -203,6 +217,7 @@ nav ul li a:hover::after{
     height: 400px; /* Fixed height to prevent jumping */
 }
 
+/* FIXED: Services List */
 .services-list {
     display: flex;
     width: 400%; /* 100% x number of slides (4) */
@@ -210,6 +225,7 @@ nav ul li a:hover::after{
     transition: transform 0.5s ease;
 }
 
+/* FIXED: Individual Service */
 .services {
     width: 25%; /* 100% divided by number of slides (4) */
     height: 100%;
@@ -233,13 +249,13 @@ nav ul li a:hover::after{
 }
 
 .services .layer h3 {
-    font-size: 1.5rem; font-weight: 600;
+    font-size: 1.5rem;
     margin-bottom: 12px;
     color: #0066a4;
 }
 
 .services .layer p {
-    font-size: 1rem; color: #555; line-height: 1.6;
+    font-size: 1rem;
     color: #555;
     line-height: 1.5;
 }
@@ -299,12 +315,12 @@ nav ul li a:hover::after{
 /* Footer */
 .footer-container {
     display: flex;
-    background: #222;
-    color: #eee;
+    background: #333;
+    color: white;
     padding: 20px 10% 40px 10%;
     gap: 50px;
-    position: relative; 
-    z-index: 2; 
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
 }
 
 .footer-box {
@@ -321,19 +337,19 @@ nav ul li a:hover::after{
     #ausbildung .sub-title {
         font-size: 2rem;
     }
-
+    
     .slider-container {
         height: 350px;
     }
-
+    
     .services img {
         height: 200px;
     }
-
+    
     .services .layer {
         padding: 15px;
     }
-
+    
     .services .layer h3 {
         font-size: 1.3rem;
     }
@@ -343,15 +359,15 @@ nav ul li a:hover::after{
     #ausbildung {
         padding: 40px 0;
     }
-
+    
     .slider-container {
         height: 320px;
     }
-
+    
     .services img {
         height: 180px;
     }
-
+    
     .arrow {
         width: 35px;
         height: 35px;
@@ -367,16 +383,16 @@ nav .fas{
 @media only screen and (max-width: 600px){
     #header{
         background-image: url(images/Manta\ vor\ Sonne.jpg);
-        position: fixed; 
+        position: fixed; /* HINZUGEFÜGT */
         top: 0;
         left: 0;
-        z-index: 1; 
+        z-index: 1; /* HINZUGEFÜGT */
     }
-
+    
     #angebot {
-        margin-top: 100vh; 
+        margin-top: 100vh; /* HINZUGEFÜGT: Auch für Mobile */
     }
-
+    
     .header-text{
         margin-top: 100%;
         font-size: 16px;
@@ -396,7 +412,7 @@ nav .fas{
         width: 200px;
         height: 100vh;
         padding-top: 50px;
-        z-index: 20; 
+        z-index: 20; /* ERHÖHT: Über allem anderen */
         transition: right 0.5s;
     }
     nav ul li{
@@ -433,6 +449,9 @@ nav .fas{
     }
 }
 
+
+
+
 /* -----------Galerie----------- */
 #gallery {
     padding: 60px 0;
@@ -449,7 +468,7 @@ nav .fas{
 
 #gallery .sub-title {
     text-align: center;
-    font-size: 2.5rem; font-weight: 700; font-weight: 700;
+    font-size: 2.8rem;
     margin-bottom: 50px;
     color: #0066a4;
 }
@@ -508,7 +527,7 @@ nav .fas{
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.6);
-    color: #eee;
+    color: white;
     padding: 8px;
     text-align: center;
     opacity: 0;
@@ -551,7 +570,7 @@ nav .fas{
     position: absolute;
     top: 15px;
     right: 25px;
-    color: #eee;
+    color: white;
     font-size: 40px;
     cursor: pointer;
     z-index: 1001;
@@ -567,23 +586,24 @@ nav .fas{
     .gallery-item {
         flex: 0 0 150px;
     }
-
+    
     .gallery-item img {
         height: 120px;
     }
-
+    
     #gallery .sub-title {
-        font-size: 2rem; font-weight: 700;
+        font-size: 2.2rem;
         margin-bottom: 20px;
     }
-
+    
     .lightbox-content {
         max-width: 95%;
     }
-
+    
     .close {
         font-size: 30px;
         top: 10px;
         right: 15px;
     }
 }
+
