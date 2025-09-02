@@ -7,10 +7,9 @@
     <title>Sporttauchclub Leonberg</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://kit.fontawesome.com/c17465986d.js" crossorigin="anonymous"></script>
+
 </head>
 
-<!-- Header -->
 <body>
 <div id="header">
     <div class="container">
@@ -33,7 +32,6 @@
     </div>
 </div>
 
-<!-- First Sliding Section -->
 <div id="angebot">
     <div class="container">
         <h1 class="sub-title">Aktivitäten</h1>
@@ -70,7 +68,6 @@
     </div>
 </div>
 
-<!-- Second Sliding Section -->
 <div id="ausbildung">
     <div class="container">
         <h1 class="sub-title">Ausbildung</h1>
@@ -105,13 +102,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Pfeile f�r die Navigation -->
+
             <div class="slider-arrows">
                 <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
                 <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
             </div>
         </div>
-        <!-- Punkte f�r die Navigation -->
+
         <div class="slider-nav">
             <div class="slider-dot active"></div>
             <div class="slider-dot"></div>
@@ -120,8 +117,67 @@
         </div>
     </div>
 </div>
- 
-<!-- Footer -->
+
+<div id="gallery">
+    <div class="container">
+        <h1 class="sub-title">Galerie</h1>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/Hecht.jpg" alt="Hecht">
+                <div class="layer">
+                    <h3>Hecht</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/DSC04156.JPG" alt="Hai">
+                <div class="layer">
+                    <h3>Hai</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Manta im Blauwasser.jpg" alt="Manta">
+                <div class="layer">
+                    <h3>Manta im Blauwasser</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Wels.png" alt="Wels">
+                <div class="layer">
+                    <h3>Wels</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Quappe mit Fisch.png" alt="Wels">
+                <div class="layer">
+                    <h3>Quappe</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Wels in Röhre.jpg" alt="Wels">
+                <div class="layer">
+                    <h3>Wels in Röhre</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Manta vor Sonne.jpg" alt="Wels">
+                <div class="layer">
+                    <h3>Manta vor Sonne</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/Walhai.jpg" alt="Wels">
+                <div class="layer">
+                    <h3>Walhai</h3>
+                </div>
+            </div>
+            
+
+
+            
+        </div>
+    </div>
+</div>
+
 <div class="footer-container" id="contact">
     <div class="footer-box">
         <h4>Contact Information</h4>
@@ -136,6 +192,11 @@
         <p><strong>Responsible:</strong> -</p>
         <p><strong>Legal Notice:</strong> -</p>
     </div>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Vergrößerte Ansicht">
 </div>
 
 <script>
@@ -155,32 +216,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.slider-dot');
     const prevArrow = document.querySelector('.arrow.prev');
     const nextArrow = document.querySelector('.arrow.next');
-    
+
     let currentSlide = 0;
-    
+
     function updateSlider() {
         // Move slider based on current slide (each slide is 25% width)
         const offset = -currentSlide * 25; // 25% per slide (100% / 4 slides)
         slider.style.transform = `translateX(${offset}%)`;
-        
+
         // Update active dot
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
-    
+
     // Next slide
     nextArrow.addEventListener('click', function() {
         currentSlide = (currentSlide + 1) % slides.length;
         updateSlider();
     });
-    
+
     // Previous slide
     prevArrow.addEventListener('click', function() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateSlider();
     });
-    
+
     // Jump to specific slide
     dots.forEach((dot, index) => {
         dot.addEventListener('click', function() {
@@ -188,9 +249,49 @@ document.addEventListener('DOMContentLoaded', function() {
             updateSlider();
         });
     });
-    
+
     // Initialize slider
     updateSlider();
+});
+</script>
+
+<script>
+// Lightbox Funktionen
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.close');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+
+    // �ffne Lightbox
+    galleryItems.forEach(img => {
+        img.addEventListener('click', function() {
+            lightbox.style.display = 'block';
+            lightboxImg.src = this.src;
+            document.body.style.overflow = 'hidden'; // Verhindert Scrollen im Hintergrund
+        });
+    });
+
+    // Schlie�e Lightbox
+    closeBtn.addEventListener('click', function() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Erlaubt wieder Scrollen
+    });
+
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // ESC-Taste schlie�t Lightbox
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'block') {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 });
 </script>
 
