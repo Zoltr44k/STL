@@ -1,335 +1,450 @@
-* {
+*{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 0; 
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box; 
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+html{
+    scroll-behavior: smooth;
 }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
+body{
+    background: #fff;
+    color: #000;
+}
+
+#header{
     width: 100%;
-    background-color: rgba(244, 244, 244, 0.95);
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
-.nav-menu a:hover {
-    color: #007bff;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 3px 0;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('https://indojunkie.com/wp-content/uploads/manta-rochen-indonesien-6.jpg');
+    height: 100vh; 
+    background-image: url(https://indojunkie.com/wp-content/uploads/manta-rochen-indonesien-6.jpg);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    position: fixed; /* HINZUGEFÜGT: Header fixiert */
+    top: 0;
+    left: 0;
+    z-index: 1; /* HINZUGEFÜGT: Header bleibt im Hintergrund */
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 10; /* HINZUGEFÜGT: Navigation über allem */
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.logo{
+    width: 140px;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
 }
 
-/* Main Content */
-main {
-    background-color: #fff;
-    padding: 3rem 0;
+nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
 }
 
-.content-section {
-    max-width: 1200px;
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{
+    color: #000;
+}
+
+/* -----------angebot----------- */
+#angebot {
+    padding: 60px 0;
+    background-color: #f5f7fa;
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
+    margin-top: 100vh; /* HINZUGEFÜGT: Startet nach dem Header */
+}
+
+#angebot .container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem 20px;
-    margin-bottom: 3rem;
+    padding: 0 20px;
 }
 
-.section-title {
+#angebot .sub-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #0066a4;
+}
+
+#angebot .work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+#angebot .work {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    height: 380px;
+    border: 1px solid #e0e0e0;
+}
+
+#angebot .work img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+#angebot .layer {
+    padding: 25px;
+    background: #fff;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+}
+
+#angebot .layer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #0066a4;
+}
+
+@media (max-width: 992px) {
+    #angebot .work-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #angebot .work-list {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    #angebot .sub-title {
+        font-size: 2.2rem;
+    }
+    
+    #angebot .work {
+        height: auto;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #angebot .layer {
+        height: auto;
+    }
+}
+
+/* -----------Ausbildung (FIXED SLIDER)----------- */
+#ausbildung {
+    padding: 60px 0;
+    background-color: #f5f7fa;
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
+}
+
+#ausbildung .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#ausbildung .sub-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
+    margin-bottom: 50px;
+    color: #0066a4;
+    position: relative;
 }
 
-/* Sliding Boxes Container */
+#ausbildung .sub-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a8e1;
+    border-radius: 2px;
+}
+
+/* FIXED: Slider Container */
 .slider-container {
     position: relative;
-    overflow: hidden;
-    margin: 0 20px;
-}
-
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.3s ease;
-}
-
-.content-box {
-    min-width: 300px;
-    width: 300px;
-    margin-right: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-}
-
-.image-placeholder {
+    overflow: hidden; /* This is crucial - hides slides that are outside the view */
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border: 1px solid #e0e0e0;
     width: 100%;
-    height: 200px;
-    background-color: #e9ecef;
-    border: 2px dashed #adb5bd;
+    height: 400px; /* Fixed height to prevent jumping */
+}
+
+/* FIXED: Services List */
+.services-list {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    color: #6c757d;
-    font-style: italic;
-    position: relative;
+    width: 400%; /* 100% x number of slides (4) */
+    height: 100%;
+    transition: transform 0.5s ease;
 }
 
-.image-placeholder::before {
-    content: attr(data-text);
+/* FIXED: Individual Service */
+.services {
+    width: 25%; /* 100% divided by number of slides (4) */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.content-box h3 {
-    margin-bottom: 0.5rem;
-    color: #333;
+.services img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
 }
 
-.content-box p {
-    color: #666;
+.services .layer {
+    padding: 20px;
+    flex: 1;
+}
+
+.services .layer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #0066a4;
+}
+
+.services .layer p {
+    font-size: 1rem;
+    color: #555;
     line-height: 1.5;
-    font-size: 0.9rem;
 }
 
-/* Slider Controls */
-.slider-trigger {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 5;
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.slider-trigger.left {
-    left: 0;
+.slider-dot.active {
+    background-color: #0066a4;
 }
 
-.slider-trigger.right {
-    right: 0;
-}
-
-.slider-arrow {
+.slider-arrows {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 123, 255, 0.8);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.5rem;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
     z-index: 10;
-    transition: all 0.3s ease;
-    opacity: 0;
     pointer-events: none;
 }
 
-.slider-trigger:hover .slider-arrow {
-    opacity: 1;
-    pointer-events: all;
+.arrow {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #0066a4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    pointer-events: auto;
 }
 
-.slider-arrow:hover {
-    background-color: rgba(0, 86, 179, 0.9);
-}
-
-.slider-arrow.left {
-    left: 20px;
-}
-
-.slider-arrow.right {
-    right: 20px;
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 /* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 0;
-}
-
 .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    display: flex;
+    background: #333;
+    color: white;
+    padding: 40px 10%;
+    gap: 50px;
+    position: relative; /* HINZUGEFÜGT */
+    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
 }
 
 .footer-box {
-    background-color: #444;
-    padding: 1.5rem;
-    border-radius: 8px;
+    flex: 1;
 }
 
 .footer-box h4 {
-    margin-bottom: 1rem;
-    color: #fff;
+    margin-bottom: 20px;
+    color: #0066a4;
 }
 
-.footer-box p {
-    color: #ccc;
-    margin-bottom: 0.5rem;
-}
-
-/* Mobile Styles */
+/* Responsive Design Updates */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        flex-direction: column;
-        background-color: rgba(244, 244, 244, 0.95);
-        width: 100%;
-        text-align: center;
-        padding: 2rem 0;
-        border-bottom: 1px solid #ddd;
-        gap: 1rem;
-        transition: top 0.3s ease;
-    }
-
-    .nav-menu.active {
-        top: 70px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    .section-title {
+    #ausbildung .sub-title {
         font-size: 2rem;
     }
-
-    .content-box {
-        min-width: 280px;
-        width: 280px;
+    
+    .slider-container {
+        height: 350px;
     }
-
-    .slider-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+    
+    .services img {
+        height: 200px;
     }
-
-    .slider-arrow.left {
-        left: 15px;
+    
+    .services .layer {
+        padding: 15px;
     }
-
-    .slider-arrow.right {
-        right: 15px;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
+    
+    .services .layer h3 {
+        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 480px) {
-    .content-box {
-        min-width: 250px;
-        width: 250px;
+    #ausbildung {
+        padding: 40px 0;
     }
-
-    .slider-arrow {
+    
+    .slider-container {
+        height: 320px;
+    }
+    
+    .services img {
+        height: 180px;
+    }
+    
+    .arrow {
         width: 35px;
         height: 35px;
-        font-size: 1rem;
+        font-size: 16px;
     }
+}
 
-    .slider-arrow.left {
-        left: 10px;
+/* -----------css for small screens----------- */
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(https://indojunkie.com/wp-content/uploads/manta-rochen-indonesien-6.jpg);
+        position: fixed; /* HINZUGEFÜGT */
+        top: 0;
+        left: 0;
+        z-index: 1; /* HINZUGEFÜGT */
     }
-
-    .slider-arrow.right {
-        right: 10px;
+    
+    #angebot {
+        margin-top: 100vh; /* HINZUGEFÜGT: Auch für Mobile */
+    }
+    
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background:#fff;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 20; /* ERHÖHT: Über allem anderen */
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
     }
 }
