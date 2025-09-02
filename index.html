@@ -1,526 +1,27 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sporttauchclub Leonberg</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        *{
-            margin: 0;
-            padding: 0; 
-            font-family: 'Poppins', sans-serif; 
-            box-sizing: border-box; 
-        }
-
-        html{
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px; /* Abstand für Ankerlinks wegen fixed Header */
-        }
-
-        body{
-            background: #fff;
-            color: #333;
-            padding-top: 70px; /* Platz für fixed Header */
-        }
-
-        #header{
-            width: 100%;
-            min-height: 100vh;
-            background-image: url(images/Manta\ vor\ Sonne.jpg);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .container{
-            padding: 10px 5%;
-        }
-
-        nav{
-            display: flex;
-            align-items: center; 
-            justify-content: space-between;
-            flex-wrap: wrap;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px 5%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo{
-            width: 140px;
-            height: auto;
-        }
-
-        nav ul li{
-            display: inline-block;
-            list-style: none;
-            margin: 10px 15px;
-        }
-
-        nav ul li a{
-            color: #333;
-            text-decoration: none;
-            font-size: 16px;
-            position: relative;
-        }
-
-        nav ul li a::after{
-            content: '';
-            width: 0%;
-            height: 3px;
-            background: #222;
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            transition: 0.5s;
-        }
-
-        nav ul li a:hover::after{
-            width: 100%;
-        }
-
-        .header-text{
-            padding-top: 100px;
-            text-align: center;
-            font-size: 40px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .header-text h1{
-            font-size: 24px;
-            margin-top: 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-        }
-
-        /* -----------angebot----------- */
-        #angebot {
-            padding: 60px 0;
-            background-color: #f5f7fa;
-        }
-
-        #angebot .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .sub-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            color: #0066a4;
-        }
-
-        #angebot .work-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        #angebot .work {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            position: relative;
-            border: 1px solid #e0e0e0;
-        }
-
-        #angebot .work img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        #angebot .layer {
-            padding: 15px;
-            background: #fff;
-        }
-
-        #angebot .layer h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #0066a4;
-        }
-
-        #angebot .layer p {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        /* -----------ausbildung----------- */
-        #ausbildung {
-            padding: 60px 0;
-            background-color: #f5f7fa;
-        }
-
-        #ausbildung .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .services-list {
-            display: flex;
-            width: 400%;
-            transition: transform 0.5s ease;
-        }
-
-        .services {
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .services img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .services .layer {
-            padding: 15px;
-        }
-
-        .services .layer h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #0066a4;
-        }
-
-        .services .layer p {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        .slider-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .slider-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin: 0 6px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .slider-dot.active {
-            background-color: #0066a4;
-        }
-
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 10px;
-            z-index: 10;
-        }
-
-        .arrow {
-            width: 35px;
-            height: 35px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 16px;
-            color: #0066a4;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-
-        .arrow:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-
-        /* -----------Galerie----------- */
-        #gallery {
-            padding: 60px 0;
-            background-color: #f5f7fa;
-        }
-
-        #gallery .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            aspect-ratio: 1/1;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item .layer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.6);
-            color: #eee;
-            padding: 8px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .layer {
-            opacity: 1;
-        }
-
-        .gallery-item .layer h3 {
-            font-size: 14px;
-            margin: 0;
-        }
-
-        /* Footer */
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            background: #222;
-            color: #eee;
-            padding: 30px 5%;
-            gap: 30px;
-        }
-
-        .footer-box {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-box h4 {
-            margin-bottom: 15px;
-            color: #0066a4;
-        }
-
-        .footer-box p {
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow: auto;
-            touch-action: manipulation;
-        }
-
-        .lightbox-content {
-            position: relative;
-            margin: auto;
-            display: block;
-            max-width: 95%;
-            max-height: 95%;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 8px;
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            color: #eee;
-            font-size: 40px;
-            cursor: pointer;
-            z-index: 1001;
-            transition: color 0.3s ease;
-        }
-
-        .close:hover {
-            color: #0066a4;
-        }
-
-        /* -----------css for small screens----------- */
-        nav .fa-bars, nav .fa-xmark {
-            display: none;
-        }
-
-        @media only screen and (max-width: 768px){
-            .container {
-                padding: 10px 15px;
-            }
-            
-            nav {
-                padding: 10px 15px;
-            }
-            
-            nav ul {
-                background: #fff;
-                position: fixed;
-                top: 0;
-                right: -200px;
-                width: 200px;
-                height: 100vh;
-                padding-top: 50px;
-                z-index: 20;
-                transition: right 0.5s;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul li {
-                display: block;
-                margin: 25px;
-            }
-            
-            nav ul li a {
-                font-size: 18px;
-            }
-            
-            nav .fa-bars, nav .fa-xmark {
-                display: block;
-                font-size: 24px;
-                cursor: pointer;
-            }
-            
-            nav .fa-xmark {
-                position: absolute;
-                top: 25px;
-                left: 25px;
-            }
-            
-            .header-text {
-                font-size: 32px;
-                padding-top: 80px;
-            }
-            
-            .header-text h1 {
-                font-size: 20px;
-            }
-            
-            .sub-title {
-                font-size: 1.8rem;
-            }
-            
-            #angebot .work-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 10px;
-            }
-            
-            .slider-arrows {
-                display: none;
-            }
-            
-            .footer-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .header-text {
-                font-size: 28px;
-            }
-            
-            .header-text h1 {
-                font-size: 18px;
-            }
-            
-            .sub-title {
-                font-size: 1.5rem;
-            }
-            
-            #angebot .work img,
-            .services img {
-                height: 180px;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-            
-            .arrow {
-                width: 30px;
-                height: 30px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/c17465986d.js" crossorigin="anonymous"></script>
 </head>
 
+<!-- Header -->
 <body>
 <div id="header">
     <div class="container">
         <nav>
-            <img src="STL logo" class="logo" alt="Sporttauchclub Leonberg Logo">
+            <img src="STL logo" class="logo">
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#angebot">Aktivitäten</a></li>
                 <li><a href="#ausbildung">Ausbildung</a></li>
-                <li><a href="#gallery">Galerie</a></li>
                 <li><a href="#contact">Kontakt</a></li>
-                <li><a href="#download">Download</a></li>
+                <li><a href="#contact">Download</a></li>
                 <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
@@ -532,33 +33,34 @@
     </div>
 </div>
 
+<!-- First Sliding Section -->
 <div id="angebot">
     <div class="container">
         <h1 class="sub-title">Aktivitäten</h1>
         <div class="work-list">
             <div class="work">
-                <img src="https://wasserwacht-muenchen.de/wp-content/uploads/2019/04/DSCN0575-2-1024x768.jpg" alt="Training">
+                <img src="https://wasserwacht-muenchen.de/wp-content/uploads/2019/04/DSCN0575-2-1024x768.jpg">
                 <div class="layer">
                     <h3>Training</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                 </div>
             </div>
             <div class="work">
-                <img src="https://www.tauchen-gelnhausen.de/wp-content/uploads/2018/08/jugend_schwimmbad_8.jpg" alt="Jugendgruppe">
+                <img src="https://www.tauchen-gelnhausen.de/wp-content/uploads/2018/08/jugend_schwimmbad_8.jpg">
                 <div class="layer">
                     <h3>Jugendgruppe</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                 </div>
             </div>
             <div class="work">
-                <img src="https://www.sportlich-unterwegs.de/wp-content/uploads/2022/07/wb_UW_Rugby_-1-1024x683.jpg" alt="Unterwasser Rugby">
+                <img src="https://www.sportlich-unterwegs.de/wp-content/uploads/2022/07/wb_UW_Rugby_-1-1024x683.jpg">
                 <div class="layer">
                     <h3>Unterwasser Rugby</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                 </div>
             </div>
             <div class="work">
-                <img src="https://cdn-cedmb.nitrocdn.com/lcYjyShwOuGiTJGGCdBoceCrHdcXidmI/assets/images/optimized/rev-cab6ee9/tauchbuddies.de/wp-content/uploads/2022/08/open-water-diver-ausbildung-die-lizenz-zum-tauchen-header.jpg" alt="Tauchausfahrten">
+                <img src="https://cdn-cedmb.nitrocdn.com/lcYjyShwOuGiTJGGCdBoceCrHdcXidmI/assets/images/optimized/rev-cab6ee9/tauchbuddies.de/wp-content/uploads/2022/08/open-water-diver-ausbildung-die-lizenz-zum-tauchen-header.jpg">
                 <div class="layer">
                     <h3>Tauchausfahrten</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
@@ -568,47 +70,48 @@
     </div>
 </div>
 
+<!-- Second Sliding Section -->
 <div id="ausbildung">
     <div class="container">
         <h1 class="sub-title">Ausbildung</h1>
         <div class="slider-container">
             <div class="services-list">
                 <div class="services">
-                    <img src="https://wasserwacht-muenchen.de/wp-content/uploads/2019/04/DSCN0575-2-1024x768.jpg" alt="CMAS">
+                    <img src="https://wasserwacht-muenchen.de/wp-content/uploads/2019/04/DSCN0575-2-1024x768.jpg">
                     <div class="layer">
                         <h3>CMAS</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                     </div>
                 </div>
                 <div class="services">
-                    <img src="https://www.tauchen-gelnhausen.de/wp-content/uploads/2018/08/jugend_schwimmbad_8.jpg" alt="Kinder">
+                    <img src="https://www.tauchen-gelnhausen.de/wp-content/uploads/2018/08/jugend_schwimmbad_8.jpg">
                     <div class="layer">
                         <h3>Kinder</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                     </div>
                 </div>
                 <div class="services">
-                    <img src="https://www.sportlich-unterwegs.de/wp-content/uploads/2022/07/wb_UW_Rugby_-1-1024x683.jpg" alt="Schnuppertauchen">
+                    <img src="https://www.sportlich-unterwegs.de/wp-content/uploads/2022/07/wb_UW_Rugby_-1-1024x683.jpg">
                     <div class="layer">
                         <h3>Schnuppertauchen</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                     </div>
                 </div>
                 <div class="services">
-                    <img src="https://cdn-cedmb.nitrocdn.com/lcYjyShwOuGiTJGGCdBoceCrHdcXidmI/assets/images/optimized/rev-cab6ee9/tauchbuddies.de/wp-content/uploads/2022/08/open-water-diver-ausbildung-die-lizenz-zum-tauchen-header.jpg" alt="Weiteres">
+                    <img src="https://cdn-cedmb.nitrocdn.com/lcYjyShwOuGiTJGGCdBoceCrHdcXidmI/assets/images/optimized/rev-cab6ee9/tauchbuddies.de/wp-content/uploads/2022/08/open-water-diver-ausbildung-die-lizenz-zum-tauchen-header.jpg">
                     <div class="layer">
                         <h3>Weiteres</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                     </div>
                 </div>
             </div>
-
+            <!-- Pfeile f�r die Navigation -->
             <div class="slider-arrows">
                 <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
                 <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
             </div>
         </div>
-
+        <!-- Punkte f�r die Navigation -->
         <div class="slider-nav">
             <div class="slider-dot active"></div>
             <div class="slider-dot"></div>
@@ -618,6 +121,7 @@
     </div>
 </div>
 
+<!-- Third Sliding Section -->
 <div id="gallery">
     <div class="container">
         <h1 class="sub-title">Galerie</h1>
@@ -637,7 +141,7 @@
             <div class="gallery-item">
                 <img src="images/Manta im Blauwasser.jpg" alt="Manta">
                 <div class="layer">
-                    <h3>Manta im Blauwasser</h3>
+                    <h3>Manta</h3>
                 </div>
             </div>
             <div class="gallery-item">
@@ -646,56 +150,30 @@
                     <h3>Wels</h3>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img src="images/Quappe mit Fisch.png" alt="Quappe">
-                <div class="layer">
-                    <h3>Quappe</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Wels in Röhre.jpg" alt="Wels in Röhre">
-                <div class="layer">
-                    <h3>Wels in Röhre</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Manta vor Sonne.jpg" alt="Manta vor Sonne">
-                <div class="layer">
-                    <h3>Manta vor Sonne</h3>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Walhai.jpg" alt="Walhai">
-                <div class="layer">
-                    <h3>Walhai</h3>
-                </div>
-            </div>
+            <!-- Weitere Bilder hier einfügen -->
         </div>
     </div>
 </div>
 
+
+<!-- Footer -->
 <div class="footer-container" id="contact">
     <div class="footer-box">
-        <h4>Kontaktinformation</h4>
-        <p><strong>Adresse:</strong> -</p>
-        <p><strong>Telefon:</strong> -</p>
+        <h4>Contact Information</h4>
+        <p><strong>Address:</strong> -</p>
+        <p><strong>Phone:</strong> -</p>
         <p><strong>Email:</strong> -</p>
-        <p><strong>Öffnungszeiten:</strong> -</p>
+        <p><strong>Hours:</strong> -</p>
     </div>
     <div class="footer-box">
         <h4>Impressum</h4>
-        <p><strong>Verein:</strong> -</p>
-        <p><strong>Verantwortlich:</strong> -</p>
-        <p><strong>Rechtliche Hinweise:</strong> -</p>
-    </div>
-    <div class="footer-box" id="download">
-        <h4>Download</h4>
-        <p><a href="#" style="color: #eee;">Anmeldeformular</a></p>
-        <p><a href="#" style="color: #eee;">Vereinssatzung</a></p>
-        <p><a href="#" style="color: #eee;">Datenschutzerklärung</a></p>
+        <p><strong>Company:</strong> -</p>
+        <p><strong>Responsible:</strong> -</p>
+        <p><strong>Legal Notice:</strong> -</p>
     </div>
 </div>
 
+<!-- Lightbox HTML (am Ende der Seite vor dem schließenden </body>-Tag einfügen) -->
 <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img" alt="Vergrößerte Ansicht">
@@ -718,64 +196,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.slider-dot');
     const prevArrow = document.querySelector('.arrow.prev');
     const nextArrow = document.querySelector('.arrow.next');
-
+    
     let currentSlide = 0;
-
+    
     function updateSlider() {
-        const offset = -currentSlide * 25;
+        // Move slider based on current slide (each slide is 25% width)
+        const offset = -currentSlide * 25; // 25% per slide (100% / 4 slides)
         slider.style.transform = `translateX(${offset}%)`;
-
+        
+        // Update active dot
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
-
+    
+    // Next slide
     nextArrow.addEventListener('click', function() {
         currentSlide = (currentSlide + 1) % slides.length;
         updateSlider();
     });
-
+    
+    // Previous slide
     prevArrow.addEventListener('click', function() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateSlider();
     });
-
+    
+    // Jump to specific slide
     dots.forEach((dot, index) => {
         dot.addEventListener('click', function() {
             currentSlide = index;
             updateSlider();
         });
     });
-
-    // Touch events for mobile swipe
-    let touchStartX = 0;
-    let touchEndX = 0;
     
-    slider.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, false);
-
-    slider.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, false);
-
-    function handleSwipe() {
-        const minSwipeDistance = 50;
-        
-        if (touchEndX < touchStartX && touchStartX - touchEndX > minSwipeDistance) {
-            // Swipe left - next slide
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        } 
-        
-        if (touchEndX > touchStartX && touchEndX - touchStartX > minSwipeDistance) {
-            // Swipe right - previous slide
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateSlider();
-        }
-    }
-
+    // Initialize slider
     updateSlider();
 });
 </script>
@@ -788,17 +243,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector('.close');
     const galleryItems = document.querySelectorAll('.gallery-item img');
 
+    // �ffne Lightbox
     galleryItems.forEach(img => {
         img.addEventListener('click', function() {
             lightbox.style.display = 'block';
             lightboxImg.src = this.src;
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Verhindert Scrollen im Hintergrund
         });
     });
 
+    // Schlie�e Lightbox
     closeBtn.addEventListener('click', function() {
         lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto'; // Erlaubt wieder Scrollen
     });
 
     lightbox.addEventListener('click', function(e) {
@@ -808,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // ESC-Taste schlie�t Lightbox
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && lightbox.style.display === 'block') {
             lightbox.style.display = 'none';
