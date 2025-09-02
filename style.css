@@ -140,7 +140,7 @@ nav ul li a:hover::after{
 
 #angebot .layer h3 {
     font-size: 1.5rem;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     color: #0066a4;
 }
 
