@@ -100,18 +100,6 @@ nav ul li a:hover::after{
     padding: 0 20px;
 }
 
-#angebot .sub-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #00a8e1;
-    border-radius: 2px;
-}
-
 #angebot .sub-title {
     text-align: center;
     font-size: 45px;
@@ -478,6 +466,14 @@ nav .fas{
     padding: 0 20px;
 }
 
+#gallery .sub-title {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 50px;
+    color: #0066a4;
+    position: relative;
+}
+
 #gallery .sub-title::after {
     content: '';
     position: absolute;
@@ -488,13 +484,6 @@ nav .fas{
     height: 4px;
     background-color: #00a8e1;
     border-radius: 2px;
-}
-
-#gallery .sub-title {
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 50px;
-    color: #0066a4;
 }
 
 .gallery-grid {
