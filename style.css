@@ -107,6 +107,18 @@ nav ul li a:hover::after{
     color: #0066a4;
 }
 
+#angebot .sub-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a8e1;
+    border-radius: 2px;
+}
+
 #angebot .work-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
