@@ -102,7 +102,7 @@ nav ul li a:hover::after{
 
 #angebot .sub-title {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: 45px;
     margin-bottom: 50px;
     color: #0066a4;
 }
@@ -139,7 +139,7 @@ nav ul li a:hover::after{
 }
 
 #angebot .layer h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-bottom: 0;
     color: #0066a4;
 }
@@ -157,7 +157,7 @@ nav ul li a:hover::after{
     }
     
     #angebot .sub-title {
-        font-size: 2.2rem;
+        font-size: 35px;
     }
     
     #angebot .work {
@@ -187,7 +187,7 @@ nav ul li a:hover::after{
 
 #ausbildung .sub-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 40px;
     margin-bottom: 50px;
     color: #0066a4;
     position: relative;
@@ -249,13 +249,13 @@ nav ul li a:hover::after{
 }
 
 .services .layer h3 {
-    font-size: 1.5rem;
+    font-size: 24px;
     margin-bottom: 12px;
     color: #0066a4;
 }
 
 .services .layer p {
-    font-size: 1rem;
+    font-size: 16px;
     color: #555;
     line-height: 1.5;
 }
@@ -335,7 +335,7 @@ nav ul li a:hover::after{
 /* Responsive Design Updates */
 @media (max-width: 768px) {
     #ausbildung .sub-title {
-        font-size: 2rem;
+        font-size: 32px;
     }
     
     .slider-container {
@@ -351,7 +351,7 @@ nav ul li a:hover::after{
     }
     
     .services .layer h3 {
-        font-size: 1.3rem;
+        font-size: 21px;
     }
 }
 
@@ -468,7 +468,7 @@ nav .fas{
 
 #gallery .sub-title {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: 45px;
     margin-bottom: 50px;
     color: #0066a4;
 }
@@ -592,7 +592,7 @@ nav .fas{
     }
     
     #gallery .sub-title {
-        font-size: 2.2rem;
+        font-size: 35px;
         margin-bottom: 20px;
     }
     
@@ -605,5 +605,4 @@ nav .fas{
         top: 10px;
         right: 15px;
     }
-}
-
+    }
