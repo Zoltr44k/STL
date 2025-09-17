@@ -20,10 +20,10 @@ body{
     background-image: url(images/Manta\ vor\ Sonne.jpg);
     background-size: cover;
     background-position: center;
-    position: fixed; /* HINZUGEFÜGT: Header fixiert */
+    position: fixed; /* HINZUGEF�GT: Header fixiert */
     top: 0;
     left: 0;
-    z-index: 1; /* HINZUGEFÜGT: Header bleibt im Hintergrund */
+    z-index: 1; /* HINZUGEF�GT: Header bleibt im Hintergrund */
 }
 
 .container{
@@ -35,8 +35,17 @@ nav{
     align-items: center; 
     justify-content: space-between;
     flex-wrap: wrap;
-    position: relative; /* HINZUGEFÜGT */
-    z-index: 10; /* HINZUGEFÜGT: Navigation über allem */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: #fff;   
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 1000;
+
+    padding: 10px 5%; /* oben/unten 20px, links/rechts 10% */
 }
 
 .logo{
@@ -85,13 +94,121 @@ nav ul li a:hover::after{
     color: #000;
 }
 
+/* -----------Aktuelles / Timeline----------- */
+#aktuelles {
+  padding: 60px 0;
+  background-color: #f5f7fa;
+  position: relative;
+  z-index: 2;
+  margin-top: 100vh;
+}
+
+#aktuelles .sub-title {
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 50px;
+  color: #0066a4;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 4px;
+  height: 100%;
+  background: #0066a4;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-date {
+  width: 120px;
+  text-align: right;
+  padding-right: 30px;
+  font-weight: bold;
+  color: #0066a4;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -14px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 3px solid #0066a4;
+  border-radius: 50%;
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+@media (max-width: 992px) {
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    margin-left: 40px;
+  }
+
+  .timeline-date {
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .timeline-content {
+    margin-left: 20px;
+  }
+}
+
+
+
 /* -----------angebot----------- */
 #angebot {
-    padding: 60px 0;
+    padding: 60px 0; 
     background-color: #f5f7fa;
-    position: relative; /* HINZUGEFÜGT */
-    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
-    margin-top: 100vh; /* HINZUGEFÜGT: Startet nach dem Header */
+    position: relative; /* HINZUGEF�GT */
+    z-index: 2; /* HINZUGEF�GT: �ber dem Header */
 }
 
 #angebot .container {
@@ -162,7 +279,7 @@ nav ul li a:hover::after{
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     #angebot .work-list {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -187,8 +304,8 @@ nav ul li a:hover::after{
 #ausbildung {
     padding: 60px 0;
     background-color: #f5f7fa;
-    position: relative; /* HINZUGEFÜGT */
-    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
+    position: relative; /* HINZUGEF�GT */
+    z-index: 2; /* HINZUGEF�GT: �ber dem Header */
 }
 
 #ausbildung .container {
@@ -331,8 +448,8 @@ nav ul li a:hover::after{
     color: white;
     padding: 20px 10% 40px 10%;
     gap: 50px;
-    position: relative; /* HINZUGEFÜGT */
-    z-index: 2; /* HINZUGEFÜGT: Über dem Header */
+    position: relative; /* HINZUGEF�GT */
+    z-index: 2; /* HINZUGEF�GT: �ber dem Header */
 }
 
 .footer-box {
@@ -345,7 +462,7 @@ nav ul li a:hover::after{
 }
 
 /* Responsive Design Updates */
-@media (max-width: 768px) {
+@media (max-width: 992x) {
     #ausbildung .sub-title {
         font-size: 32px;
     }
@@ -367,7 +484,7 @@ nav ul li a:hover::after{
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 992px) {
     #ausbildung {
         padding: 40px 0;
     }
@@ -392,18 +509,15 @@ nav .fas{
     display: none;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 992px){
     #header{
         background-image: url(images/Manta\ vor\ Sonne.jpg);
-        position: fixed; /* HINZUGEFÜGT */
+        position: fixed; /* HINZUGEF�GT */
         top: 0;
         left: 0;
-        z-index: 1; /* HINZUGEFÜGT */
+        z-index: 1; /* HINZUGEF�GT */
     }
     
-    #angebot {
-        margin-top: 100vh; /* HINZUGEFÜGT: Auch für Mobile */
-    }
     
     .header-text{
         margin-top: 100%;
@@ -424,7 +538,7 @@ nav .fas{
         width: 200px;
         height: 100vh;
         padding-top: 50px;
-        z-index: 20; /* ERHÖHT: Über allem anderen */
+        z-index: 20; /* ERH�HT: �ber allem anderen */
         transition: right 0.5s;
     }
     nav ul li{
@@ -503,6 +617,7 @@ nav .fas{
     gap: 15px;
     overflow-x: auto;
     padding-bottom: 10px;
+    padding-top: 10px;
     scroll-behavior: smooth;
 }
 
@@ -607,7 +722,7 @@ nav .fas{
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 992px) {
     .gallery-item {
         flex: 0 0 150px;
     }
