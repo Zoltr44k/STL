@@ -20,10 +20,10 @@ body{
     background-image: url(images/Manta\ vor\ Sonne.jpg);
     background-size: cover;
     background-position: center;
-    position: fixed; /* HINZUGEF�GT: Header fixiert */
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1; /* HINZUGEF�GT: Header bleibt im Hintergrund */
+    z-index: 1;
 }
 
 .container{
@@ -35,17 +35,14 @@ nav{
     align-items: center; 
     justify-content: space-between;
     flex-wrap: wrap;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-
     background-color: #fff;   
     border-bottom: 1px solid #e0e0e0;
     z-index: 1000;
-
-    padding: 10px 5%; /* oben/unten 20px, links/rechts 10% */
+    padding: 10px 5%;
 }
 
 .logo{
@@ -94,137 +91,49 @@ nav ul li a:hover::after{
     color: #000;
 }
 
-/* -----------Aktuelles / Timeline----------- */
-#aktuelles {
-  padding: 60px 0;
-  background-color: #f5f7fa;
-  position: relative;
-  z-index: 2;
-  margin-top: 100vh;
-}
-
-#aktuelles .sub-title {
-  text-align: center;
-  font-size: 45px;
-  margin-bottom: 50px;
-  color: #0066a4;
-  position: relative;
-}
-
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding-left: 20px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 40px;
-  width: 4px;
-  height: 100%;
-  background: #0066a4;
-  border-radius: 2px;
-}
-
-.timeline-item {
-  display: flex;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.timeline-date {
-  width: 120px;
-  text-align: right;
-  padding-right: 30px;
-  font-weight: bold;
-  color: #0066a4;
-  flex-shrink: 0;
-}
-
-.timeline-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  position: relative;
-}
-
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: -14px;
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border: 3px solid #0066a4;
-  border-radius: 50%;
-}
-
-.timeline-content h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  color: #333;
-}
-
-.timeline-content p {
-  margin: 0;
-  font-size: 16px;
-  color: #555;
-}
-
-@media (max-width: 992px) {
-  .timeline {
-    padding-left: 0;
-  }
-
-  .timeline::before {
-    left: 20px;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-    margin-left: 40px;
-  }
-
-  .timeline-date {
-    text-align: left;
-    padding-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .timeline-content {
-    margin-left: 20px;
-  }
-}
-
-
-
-/* -----------angebot----------- */
-#angebot {
-    padding: 60px 0; 
+/* -----------Einheitliche Grundeinstellungen f�r alle Abschnitte----------- */
+#aktuelles,
+#angebot,
+#ausbildung,
+#gallery {
+    padding: 80px 0; /* Einheitlicher Abstand */
     background-color: #f5f7fa;
-    position: relative; /* HINZUGEF�GT */
-    z-index: 2; /* HINZUGEF�GT: �ber dem Header */
+    position: relative;
+    z-index: 2;
 }
 
-#angebot .container {
+/* Erste Section nach Header bekommt margin-top */
+#aktuelles {
+    margin-top: 100vh;
+}
+
+/* Einheitliche Container-Einstellungen */
+#aktuelles .container,
+#angebot .container,
+#ausbildung .container,
+#gallery .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-#angebot .sub-title {
+/* Einheitliche �berschriften */
+#aktuelles .sub-title,
+#angebot .sub-title,
+#ausbildung .sub-title,
+#gallery .sub-title {
     text-align: center;
-    font-size: 45px;
-    margin-bottom: 50px;
-    color: #0066a4;
+    font-size: 45px; /* Einheitliche Gr��e */
+    margin-bottom: 60px; /* Einheitlicher Abstand */
+    color: #0066a4; /* Einheitliche Farbe */
+    position: relative;
 }
 
-#angebot .sub-title::after {
+/* Einheitliche Unterstreichung f�r alle �berschriften */
+#aktuelles .sub-title::after,
+#angebot .sub-title::after,
+#ausbildung .sub-title::after,
+#gallery .sub-title::after {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -236,6 +145,74 @@ nav ul li a:hover::after{
     border-radius: 2px;
 }
 
+/* -----------Aktuelles / Timeline----------- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 4px;
+    height: 100%;
+    background: #0066a4;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    position: relative;
+}
+
+.timeline-date {
+    width: 120px;
+    text-align: left;
+    padding-right: 30px;
+    font-weight: bold;
+    color: #0066a4;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -14px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 3px solid #0066a4;
+    border-radius: 50%;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* -----------Angebot----------- */
 #angebot .work-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -273,90 +250,27 @@ nav ul li a:hover::after{
     color: #0066a4;
 }
 
-@media (max-width: 992px) {
-    #angebot .work-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    #angebot .work-list {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    #angebot .sub-title {
-        font-size: 35px;
-    }
-    
-    #angebot .work {
-        height: auto;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-    
-    #angebot .layer {
-        height: auto;
-    }
-}
-
 /* -----------Ausbildung (FIXED SLIDER)----------- */
-#ausbildung {
-    padding: 60px 0;
-    background-color: #f5f7fa;
-    position: relative; /* HINZUGEF�GT */
-    z-index: 2; /* HINZUGEF�GT: �ber dem Header */
-}
-
-#ausbildung .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-#ausbildung .sub-title {
-    text-align: center;
-    font-size: 40px;
-    margin-bottom: 50px;
-    color: #0066a4;
-    position: relative;
-}
-
-#ausbildung .sub-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #00a8e1;
-    border-radius: 2px;
-}
-
-/* FIXED: Slider Container */
 .slider-container {
     position: relative;
-    overflow: hidden; /* This is crucial - hides slides that are outside the view */
+    overflow: hidden;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     background: #fff;
     border: 1px solid #e0e0e0;
     width: 100%;
-    height: 400px; /* Fixed height to prevent jumping */
+    height: 400px;
 }
 
-/* FIXED: Services List */
 .services-list {
     display: flex;
-    width: 400%; /* 100% x number of slides (4) */
+    width: 400%;
     height: 100%;
     transition: transform 0.5s ease;
 }
 
-/* FIXED: Individual Service */
 .services {
-    width: 25%; /* 100% divided by number of slides (4) */
+    width: 25%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -441,177 +355,7 @@ nav ul li a:hover::after{
     background-color: rgba(255, 255, 255, 1);
 }
 
-/* Footer */
-.footer-container {
-    display: flex;
-    background: #333;
-    color: white;
-    padding: 20px 10% 40px 10%;
-    gap: 50px;
-    position: relative; /* HINZUGEF�GT */
-    z-index: 2; /* HINZUGEF�GT: �ber dem Header */
-}
-
-.footer-box {
-    flex: 1;
-}
-
-.footer-box h4 {
-    margin-bottom: 20px;
-    color: #0066a4;
-}
-
-/* Responsive Design Updates */
-@media (max-width: 992x) {
-    #ausbildung .sub-title {
-        font-size: 32px;
-    }
-    
-    .slider-container {
-        height: 350px;
-    }
-    
-    .services img {
-        height: 200px;
-    }
-    
-    .services .layer {
-        padding: 15px;
-    }
-    
-    .services .layer h3 {
-        font-size: 21px;
-    }
-}
-
-@media (max-width: 992px) {
-    #ausbildung {
-        padding: 40px 0;
-    }
-    
-    .slider-container {
-        height: 320px;
-    }
-    
-    .services img {
-        height: 180px;
-    }
-    
-    .arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-    }
-}
-
-/* -----------css for small screens----------- */
-nav .fas{
-    display: none;
-}
-
-@media only screen and (max-width: 992px){
-    #header{
-        background-image: url(images/Manta\ vor\ Sonne.jpg);
-        position: fixed; /* HINZUGEF�GT */
-        top: 0;
-        left: 0;
-        z-index: 1; /* HINZUGEF�GT */
-    }
-    
-    
-    .header-text{
-        margin-top: 100%;
-        font-size: 16px;
-    }
-    .header-text h1{
-        font-size: 30px;
-    }
-    nav .fas{
-        display: block;
-        font-size: 25px;
-    }
-    nav ul{
-        background:#fff;
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 20; /* ERH�HT: �ber allem anderen */
-        transition: right 0.5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 25px;
-    }
-    nav ul .fas{
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
-    .sub-title{
-        font-size: 40px;
-    }
-    .about-col-1, .about-col-2{
-        flex-basis: 100%;
-    }
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-    .about-col-2{
-        font-size: 14px;
-    }
-    .tab-links{
-        font-size: 16px;
-        margin-right: 20px;
-    }
-    .contact-left, .contact-right{
-        flex-basis: 100%;
-    }
-    .copyright{
-        font-size: 14px;
-    }
-}
-
-
-
-
 /* -----------Galerie----------- */
-#gallery {
-    padding: 60px 0;
-    background-color: #f5f7fa;
-    position: relative;
-    z-index: 2;
-}
-
-#gallery .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-#gallery .sub-title {
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 50px;
-    color: #0066a4;
-    position: relative;
-}
-
-#gallery .sub-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #00a8e1;
-    border-radius: 2px;
-}
-
 .gallery-grid {
     display: flex;
     gap: 15px;
@@ -721,19 +465,171 @@ nav .fas{
     color: #0066a4;
 }
 
-/* Mobile */
-@media (max-width: 992px) {
+/* Footer */
+.footer-container {
+    display: flex;
+    background: #333;
+    color: white;
+    padding: 80px 10% 40px 10%; /* Einheitlicher oberer Abstand */
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-box {
+    flex: 1;
+}
+
+.footer-box h4 {
+    margin-bottom: 20px;
+    color: #0066a4;
+}
+
+/* -----------css for small screens----------- */
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 992px){
+    #header{
+        background-image: url(images/Manta\ vor\ Sonne.jpg);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background:#fff;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 20;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+    
+    /* -----------Mobile Responsive f�r alle Abschnitte----------- */
+    /* Einheitliche mobile Abst�nde */
+    #aktuelles,
+    #angebot,
+    #ausbildung,
+    #gallery {
+        padding: 50px 0;
+    }
+    
+    /* Einheitliche mobile �berschriften */
+    #aktuelles .sub-title,
+    #angebot .sub-title,
+    #ausbildung .sub-title,
+    #gallery .sub-title {
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+    
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        margin-left: 40px;
+    }
+
+    .timeline-date {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        margin-left: 20px;
+    }
+    
+    #angebot .work-list {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    #angebot .work {
+        height: auto;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    #angebot .layer {
+        height: auto;
+    }
+    
+    .slider-container {
+        height: 320px;
+    }
+    
+    .services img {
+        height: 180px;
+    }
+    
+    .arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
     .gallery-item {
         flex: 0 0 150px;
     }
     
     .gallery-item img {
         height: 120px;
-    }
-    
-    #gallery .sub-title {
-        font-size: 35px;
-        margin-bottom: 20px;
     }
     
     .lightbox-content {
@@ -745,4 +641,10 @@ nav .fas{
         top: 10px;
         right: 15px;
     }
+    
+    .footer-container {
+        padding: 50px 10% 40px 10%;
+        flex-direction: column;
+        gap: 30px;
     }
+}
