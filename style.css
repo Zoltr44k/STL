@@ -239,7 +239,7 @@ nav ul li a:hover::after{
 #angebot .layer {
     padding: 25px;
     background: #fff;
-    height: 160px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
